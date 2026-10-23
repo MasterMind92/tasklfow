@@ -2,16 +2,13 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
 use App\Models\Project;
 use App\Models\Task;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    
-
     /**
      * Seed the application's database.
      */
@@ -25,20 +22,19 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $demo = User::factory()->create([
-            'name'     => 'Awa Demo',
-            'email'    => 'demo@taskflow.test',
+            'name' => 'Awa Demo',
+            'email' => 'demo@taskflow.test',
             'password' => bcrypt('password'),
         ]);
 
         $collegue = User::factory()->create(['email' => 'collegue@taskflow.test']);
 
-
         Project::factory()
-        ->count(3)
-        ->for($demo, 'owner')
-        ->hasAttached($demo, ['role' => 'owner'], 'members')
-        ->hasAttached($collegue, ['role' => 'member'], 'members')
-        ->has(Task::factory()->count(6), 'tasks')
-        ->create(); 
+            ->count(3)
+            ->for($demo, 'owner')
+            ->hasAttached($demo, ['role' => 'owner'], 'members')
+            ->hasAttached($collegue, ['role' => 'member'], 'members')
+            ->has(Task::factory()->count(6), 'tasks')
+            ->create();
     }
 }
