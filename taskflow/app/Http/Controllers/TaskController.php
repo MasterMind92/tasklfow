@@ -20,7 +20,7 @@ class TaskController extends Controller
     /**
      * Display a listing of the resource.
      */
-   public function index(Request $request): View
+    public function index(Request $request): View
     {
         $tasks = Task::query()
             ->with(['project', 'assignee'])

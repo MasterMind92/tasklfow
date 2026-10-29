@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Response;
 use App\Contracts\TaskNotifier;
+use App\Services\SlackTaskNotifier;
 
 class AppServiceProvider extends ServiceProvider
 {
