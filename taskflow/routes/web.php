@@ -1,6 +1,6 @@
 <?php
 
-// use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TaskController;
@@ -8,11 +8,12 @@ use App\Http\Controllers\TaskController;
 Route::get('/', fn () => redirect()->route('projects.index'));
 
 Route::middleware('auth')->group(function () {
-    // Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
 
-    // Route::get('/projects/{project}', [ProjectController::class, 'show'])
+    Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
+
+    Route::get('/projects/{project}', [ProjectController::class, 'show'])
         // ->middleware('project.active')          // notion 09
-        // ->name('projects.show');
+        ->name('projects.show');
 
     Route::resource('tasks', TaskController::class);
 

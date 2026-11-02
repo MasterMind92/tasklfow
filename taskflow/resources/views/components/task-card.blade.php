@@ -1,6 +1,6 @@
 @props(['task'])
 
-<article class="card py-12">
+<article class="card pt-8">
     <x-content-card>
         <h3>{{ $task->title }}</h3>
 
@@ -12,9 +12,9 @@
         @endif
 
         <a href="{{ route('tasks.show', $task) }}" >
-            <x-button>
+            <x-primary-button>
                 Ouvrir
-            </x-button>
+            </x-primary-button>
         </a>
     </x-content-card>
             
