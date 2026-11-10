@@ -1,4 +1,4 @@
-<div class="py-4 my-4">
+<div class="py-4 mb-4">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="bg-white overflow-hidden shadow-sm dark:bg-gray-800 sm:rounded-lg py-12 pl-8">
             {{$slot}}

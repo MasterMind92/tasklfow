@@ -1,6 +1,6 @@
 @props(['task'])
 
-<article class="card pt-8">
+<article class="card">
     <x-content-card>
         <h3>{{ $task->title }}</h3>
 
